@@ -159,7 +159,10 @@ function defaultDeviceProps(
     return proto.DeviceProps.encode({
         os: config.deviceOsDisplayName ?? process.platform,
         version: parseOsVersion(config.deviceOsVersion ?? getRuntimeOsVersion()),
-        platformType: resolveDevicePropsPlatformType(config.deviceBrowser),
+        platformType: resolveDevicePropsPlatformType(
+            config.deviceBrowser,
+            config.deviceUserAgentPlatform
+        ),
         requireFullSync: config.requireFullSync === true,
         historySyncConfig: {
             storageQuotaMb: 114_149,
