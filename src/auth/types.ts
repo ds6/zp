@@ -1,9 +1,9 @@
 import type { SignalKeyPair } from '@crypto/curves/types'
 import type { Proto } from '@proto'
+import type { WaUserAgentPlatform } from '@transport/noise/types'
 import type { RegistrationInfo, SignedPreKeyRecord } from '@signal/types'
 import type { WaMobileTransportDeviceInfo } from '@transport/noise/WaMobileClientPayload'
 import type { WaCommsConfig, WaProxyTransport } from '@transport/types'
-
 export type { WaMobileTransportDeviceInfo } from '@transport/noise/WaMobileClientPayload'
 
 /**
@@ -126,6 +126,7 @@ export interface WaAuthClientOptions {
      * {@link WaMobileTransportOptions}.
      */
     readonly mobileTransport?: WaMobileTransportOptions
+    readonly deviceUserAgentPlatform?: WaUserAgentPlatform
 }
 
 export interface WaMobileTransportOptions {
